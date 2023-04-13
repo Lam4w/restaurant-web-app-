@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
+import { setLogout } from "../../state";
 import './Header.css'
 
 export default function Header() {
-    const userId = useSelector((state) => state.user);
-    const ID = userId._id;
-    console.log(ID);
-  return (
+    const isAuth = Boolean(useSelector((state) => state.token));
+    const dispatch = useDispatch();
+
+    return (
         <div className='header-wrapper'>
             <div className='header-entry'>
                 <div className='navigation'>
@@ -30,7 +31,7 @@ export default function Header() {
                     </ul>   
                 </div>
                 <div className='order-section'>
-                    {ID != null ? (
+                    {isAuth ? (
                         <div className='dropdown'> 
                             <Link to="/menu"><button>ORDER HERE</button></Link>
                             <div className='avatar-dropdown'>
@@ -38,7 +39,7 @@ export default function Header() {
                                 <input type="checkbox" id='navdrop' />
                                 <ul className='nav-list'>
                                     <li className='nav-item'><Link to="/user">Profile</Link></li>
-                                    <li className='nav-item'>Log out</li>
+                                    <li className='nav-item' onClick={() => dispatch(setLogout())}>Log out</li>
                                 </ul>
                             </div>
                         </div>
@@ -47,7 +48,7 @@ export default function Header() {
                         <button>LOGIN</button>
                         </Link>
                     )}
-                   
+                
                 </div>
             </div>
             <div className="marquee1">
@@ -56,5 +57,5 @@ export default function Header() {
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci odio, qui nam quisquam velit eos nemo doloresex laborum magni corrupti! Reprehenderit sequi!</p>
             </div>
         </div>
-  )
+    )
 }
