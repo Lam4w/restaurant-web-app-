@@ -30,7 +30,7 @@ export default function ReviewList() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   
   const columns = [
-    { field: "_id", headerName: "ID", width: 180 },
+    { field: "_id", headerName: "ID", width: 130 },
     { field: "name", headerName: "Name", width: 180 },
     {
       field: "desc",

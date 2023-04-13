@@ -98,7 +98,7 @@ export const deleteReview = async (req, res) => {
                     _id: new ObjectId(req.params.id)
                 }
             );
-            res.status(200).json({ msg: "Delêtd successfully"});
+            res.status(200).json({ msg: "Deleted successfully"});
         } catch (err) {
             res.status(500).json(err);
         }

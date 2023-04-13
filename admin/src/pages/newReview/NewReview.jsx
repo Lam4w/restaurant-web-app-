@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 export default function NewReview() {
-
   const navigate = useNavigate();
   const [review, setReview] = useState({});
   const [img, setImg] = useState({});

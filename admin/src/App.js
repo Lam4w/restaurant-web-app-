@@ -12,7 +12,6 @@ import NewProduct from "./pages/newProduct/NewProduct";
 import Order from "./pages/order/Order";
 import OrderList from "./pages/orderList/OrderList";
 import Login from "./pages/login/Login";
-import Review from "./pages/review/Review";
 import ReviewList from "./pages/reviewList/ReviewList";
 import NewReview from "./pages/newReview/NewReview";
 import { useSelector } from 'react-redux';
@@ -36,9 +35,7 @@ function App() {
           <Route path="/newproduct" element={isAuth ? <NewProduct /> : <Navigate to='/login'/>} />
           <Route path="/orders" element={isAuth ? <OrderList /> : <Navigate to='/login'/>} />
           <Route path="/order/:orderId" element={isAuth ? <Order /> : <Navigate to='/login'/>} />
-      
           <Route path="/reviews" element={isAuth ? <ReviewList /> : <Navigate to='/login'/>} />
-          <Route path="/review/:reviewId" element={isAuth ? <Review /> : <Navigate to='/login'/>} />
           <Route path="/newReview" element={isAuth ? <NewReview /> : <Navigate to='/login'/>} />
         </Routes>
       </div>
