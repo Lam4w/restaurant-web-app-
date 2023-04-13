@@ -5,7 +5,7 @@ import { verifyToken } from '../middleware/auth.js';
 const router = express.Router();
 
 //CREATE
-router.post('/', verifyToken, createOrder);
+router.post('/', createOrder);
  
 //READ 
 router.get('/stats', verifyToken, getOrderStats);

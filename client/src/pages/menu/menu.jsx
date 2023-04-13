@@ -6,11 +6,17 @@ import Fetch from "../../components/products"
 import store from "../../store";
 import { Provider } from "react-redux";
 class Menu extends React.Component {
-   
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: props.user
+    };
+  }
     // createOrder = (order) => {
     //     alert("Need to save order for " + order.name);
     //   };
     render(){
+      const user = this.state.user;
         return (
           <Provider store={store}>
             <div id="top" className="home">
@@ -21,7 +27,7 @@ class Menu extends React.Component {
               <Fetch></Fetch>
             </div>
             <div className="sidebar">
-              <Cart
+              <Cart user={user}
               />
             </div>
           </div>
