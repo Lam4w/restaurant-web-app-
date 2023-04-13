@@ -91,7 +91,7 @@ export default function Register() {
                               name="firstName"
                               className={errors.firstName && touched.firstName ? "input-error" : ""}
                             />
-                            {errors.firstName && touched.firstName && <p className='error'>{errors.firstName}</p>}
+                            {errors.firstName && touched.firstName && <p className='error-login'>{errors.firstName}</p>}
                           </div>
                           <div className='field'>
                             <div className='label'>
@@ -106,7 +106,7 @@ export default function Register() {
                               name="lastName"
                               className={errors.lastName && touched.lastName ? "input-error" : ""}
                             />
-                            {errors.lastName && touched.lastName && <p className='error'>{errors.lastName}</p>}
+                            {errors.lastName && touched.lastName && <p className='error-login'>{errors.lastName}</p>}
                           </div>
                         </div>
                         <div className='field-group'>
@@ -123,7 +123,7 @@ export default function Register() {
                               name="email"
                               className={errors.email && touched.email ? "input-error" : ""}
                             />
-                            {errors.email && touched.email && <p className='error'>{errors.email}</p>}
+                            {errors.email && touched.email && <p className='error-login'>{errors.email}</p>}
                           </div>
                           <div className='field'>
                             <div className='label'>
@@ -138,7 +138,7 @@ export default function Register() {
                               name="phone"
                               className={errors.phone && touched.phone ? "input-error" : ""}
                             />
-                            {errors.phone && touched.phone && <p className='error'>{errors.phone}</p>}
+                            {errors.phone && touched.phone && <p className='error-login'>{errors.phone}</p>}
                           </div>
                         </div>
                         <div className='field'>
@@ -153,7 +153,7 @@ export default function Register() {
                             name="address"
                             className={errors.address && touched.address ? "input-error" : ""}
                           />
-                          {errors.address && touched.address && <p className='error'>{errors.address}</p>}
+                          {errors.address && touched.address && <p className='error-login'>{errors.address}</p>}
                         </div>
                         <div className='field'>
                           <div className='label'>
@@ -168,7 +168,7 @@ export default function Register() {
                             name="password"
                             className={errors.password && touched.password ? "input-error" : ""}
                           />
-                          {errors.password && touched.password && <p className='error'>{errors.password}</p>}
+                          {errors.password && touched.password && <p className='error-login'>{errors.password}</p>}
                         </div>
                         <button 
                           type="submit"

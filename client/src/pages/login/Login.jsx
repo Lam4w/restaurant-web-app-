@@ -93,7 +93,7 @@ export default function Login() {
                             name="email"
                             className={errors.email && touched.email ? "input-error" : ""}
                           />
-                          {errors.email && touched.email && <p className='error'>{errors.email}</p>}
+                          {errors.email && touched.email && <p className='error-login'>{errors.email}</p>}
                         </div>
                         <div className='field'>
                           <div className='label'>
@@ -108,7 +108,7 @@ export default function Login() {
                             name="password"
                             className={errors.password && touched.password ? "input-error" : ""}
                           />
-                          {errors.password && touched.password && <p className='error'>{errors.password}</p>}
+                          {errors.password && touched.password && <p className='error-login'>{errors.password}</p>}
                         </div>
                         <div className='space-between'>
                           <div className='remember'>

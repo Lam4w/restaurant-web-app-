@@ -111,9 +111,13 @@ export default function Home() {
               </h1>
 
               <div class="menu-top div-padding">
-                <h2 class="section-subtitle">
-                  bento boxes
-                </h2>
+                <div className='grid-h2'>
+                  <div></div>
+                  <h2 class="section-subtitle">
+                    bento boxes
+                  </h2> 
+                  <div></div>
+                </div>
 
                 <div class="grid-list">
                   <div class="grid-content right">
@@ -147,9 +151,13 @@ export default function Home() {
               </div>
 
               <div class="menu-mid div-padding">
-                <h2 class="section-subtitle">
-                  selection
-                </h2>
+                <div className='grid-h2'>
+                  <div></div>
+                  <h2 class="section-subtitle">
+                    selection
+                  </h2> 
+                  <div></div>
+                </div>
 
                 <div class="grid-list" id="grid-list">
                   <div class="grid-img">
