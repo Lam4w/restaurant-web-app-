@@ -130,7 +130,7 @@ input.input-error {
     border: 2px solid #F23E4D !important;
 }
 
-.error {
+.error-login {
     margin: 0;
     font-size: 25px;
     color: #F23E4D;

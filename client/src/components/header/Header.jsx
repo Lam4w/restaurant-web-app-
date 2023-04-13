@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Header.css'
 
 export default function Header() {
+    const userId = useSelector((state) => state.user);
+    const ID = userId._id;
+    console.log(ID);
   return (
-
         <div className='header-wrapper'>
             <div className='header-entry'>
                 <div className='navigation'>
@@ -27,9 +30,24 @@ export default function Header() {
                     </ul>   
                 </div>
                 <div className='order-section'>
-                    <Link to="/menu">
-                        <button>ORDER HERE</button>
-                    </Link>
+                    {ID != null ? (
+                        <div className='dropdown'> 
+                            <Link to="/menu"><button>ORDER HERE</button></Link>
+                            <div className='avatar-dropdown'>
+                                <label htmlFor="navdrop" class="img-avatar"><img src="/assets/images/avatar.png" alt="" /></label>
+                                <input type="checkbox" id='navdrop' />
+                                <ul className='nav-list'>
+                                    <li className='nav-item'><Link to="/user">Profile</Link></li>
+                                    <li className='nav-item'>Log out</li>
+                                </ul>
+                            </div>
+                        </div>
+                    ):(
+                        <Link to="/login">
+                        <button>LOGIN</button>
+                        </Link>
+                    )}
+                   
                 </div>
             </div>
             <div className="marquee1">
