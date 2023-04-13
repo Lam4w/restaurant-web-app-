@@ -1,5 +1,5 @@
 import "./featuredInfo.css";
-import { ArrowDownward, ArrowUpward, Person, ShoppingCart } from "@material-ui/icons";
+import { Person, ShoppingCart } from "@material-ui/icons";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";

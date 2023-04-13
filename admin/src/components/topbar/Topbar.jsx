@@ -1,7 +1,7 @@
 import React from "react";
 import "./topbar.css";
 import { ExitToApp } from "@material-ui/icons";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setLogout } from "../../state";
 
 export default function Topbar() {

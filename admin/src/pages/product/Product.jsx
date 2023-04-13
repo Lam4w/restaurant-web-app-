@@ -17,31 +17,43 @@ export default function Product() {
   const foodId = useParams();
   const navigate = useNavigate();
   const [food, setFood] = useState({});
-  const [updateFood, setUpdateFood] = useState({});
+  // const [updateFood, setUpdateFood] = useState({});
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
   const [type, setType] = useState('');
   const [price, setPrice] = useState(0);
   const token = useSelector((state) => state.token);
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setUpdateFood({...updateFood, [e.target.name]: value});
-    console.log(updateFood);
-  };
+  const [status, setStatus] = useState('true');
 
   const handleSelectChange = (e) => {
-    const value = e.target.value;
-    let availableValue
-    if (value === 'true') availableValue = true;
-    availableValue = false;
-    setUpdateFood({...updateFood, "isAvailable": availableValue});
+    setStatus(e.target.value);
   };
+
+  // const handleChange = (e) => {
+  //   const value = e.target.value;
+  //   setUpdateFood({...updateFood, [e.target.name]: value});
+  //   console.log(updateFood);
+  // };
+
+  // const handleSelectChange = (e) => {
+  //   const value = e.target.value;
+  //   let availableValue
+  //   if (value === 'true') availableValue = true;
+  //   availableValue = false;
+  //   setUpdateFood({...updateFood, "isAvailable": availableValue});
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(updateFood)
 
+    const updateFood = {
+      name,
+      desc,
+      type,
+      price,
+      "isAvailable": status === 'true' ? true : false
+    };
+    
     await axios.put(`http://localhost:3001/foods/${foodId.productId}`, updateFood, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -61,13 +73,13 @@ export default function Product() {
     setDesc(data.desc);
     setPrice(data.price);
     setType(data.type);
-    setUpdateFood({ 
-      "name": data.name,
-      "desc": data.desc, 
-      "price": data.price, 
-      "type": data.type,
-      "isAvailable": data.isAvailable,
-    });
+    // setUpdateFood({ 
+    //   "name": data.name,
+    //   "desc": data.desc, 
+    //   "price": data.price, 
+    //   "type": data.type,
+    //   "isAvailable": data.isAvailable,
+    // });
   };
 
   useEffect(() => {
@@ -135,7 +147,7 @@ export default function Product() {
                   className="userUpdateInput"
                   onChange={(e) => {
                     setName(e.target.value)
-                    handleChange(e)
+                    // handleChange(e)
                   }}
                   name="name"
                 />
@@ -148,7 +160,7 @@ export default function Product() {
                   className="userUpdateInput"
                   onChange={(e) => {
                     setDesc(e.target.value)
-                    handleChange(e)
+                    // handleChange(e)
                   }}
                   name="desc"
                 />
@@ -161,7 +173,7 @@ export default function Product() {
                   className="userUpdateInput"
                   onChange={(e) => {
                     setType(e.target.value)
-                    handleChange(e)
+                    // handleChange(e)
                   }}
                   name="type"
                 />
@@ -174,7 +186,7 @@ export default function Product() {
                   className="userUpdateInput"
                   onChange={(e) => {
                     setPrice(e.target.value)
-                    handleChange(e)
+                    // handleChange(e)
                   }}
                   name="price"
                 />
