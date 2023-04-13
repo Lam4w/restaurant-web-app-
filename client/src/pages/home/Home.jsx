@@ -3,21 +3,27 @@ import React, { useEffect, useState } from 'react'
 import GridFoodItem from '../../components/gridItem/GridFoodItem';
 import GridReviewItem from '../../components/gridItem/GridReviewItem';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+
+
 export default function Home() {
   const [reviews, setReviews] = useState();
   const [foods, setFoods] = useState();
 
+  const getAllFoods = async () => {
+    const response = await axios.get(`http://localhost:3001/foods`);
+    
+    const foodInfo = await response.data;
+    setFoods(foodInfo);
+    console.log(foodInfo);
+  };
+
   useEffect(() => {
-    fetch('https://6437d9c80c58d3b1457b0e31.mockapi.io/Food')
-      .then(results => results.json())
-      .then(data => {
-        const sushiFoods = data.filter((item) => item.type === "sushi").slice(0, 3);
-        const nonSushiFoods = data.filter((item) => item.type !== "sushi").slice(0, 3);
-        
-        const result = sushiFoods.flatMap((val, i) => [val, nonSushiFoods[i]]).concat(nonSushiFoods.slice(sushiFoods.length));
-        setFoods(result);
-    });
-  }, [])
+    getAllFoods();
+  }, []); 
+
+ 
+
 
   useEffect(() => {
     fetch('http://localhost:3001/reviews/')
@@ -202,11 +208,67 @@ export default function Home() {
                   <h2 className="section-subtitle">
                     drinks
                   </h2>
-                  {
-                    foods?.map((value, index) => (
-                      <GridFoodItem food={value} key={index}/>
-                    ))
-                  }
+                    <div className='map-list'>
+                      <div><h3>Sushi</h3></div>
+                      <div>
+                        {foods.filter((food) => food.type === 'sushi').map((food) => (
+                          <div key={food.type}>
+                            {food.name}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className='map-list'>
+                      <div><h3>Sashimi</h3></div>
+                      <div>
+                        {foods.filter((food) => food.type === 'sashimi').map((food) => (
+                          <div key={food.type}>
+                            {food.name}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className='map-list'>
+                      <div><h3>Bento</h3></div>
+                      <div>
+                        {foods.filter((food) => food.type === 'bento').map((food) => (
+                          <div key={food.type}>
+                            {food.name}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className='map-list'>
+                      <div><h3>Beverage</h3></div>
+                      <div>
+                        {foods.filter((food) => food.type === 'beverage').map((food) => (
+                          <div key={food.type}>
+                            {food.name}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className='map-list'>
+                      <div><h3>Ramen</h3></div>
+                      <div>
+                        {foods.filter((food) => food.type === 'ramen').map((food) => (
+                          <div key={food.type}>
+                            {food.name}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className='map-list'>
+                      <div><h3>Soba</h3></div>
+                      <div>
+                        {foods.filter((food) => food.type === 'soba').map((food) => (
+                          <div key={food.type}>
+                            {food.name}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
                 </div>
               </div>
 

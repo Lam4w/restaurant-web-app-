@@ -226,7 +226,15 @@
     /*-----------------------------------*\
       #HERO
     \*-----------------------------------*/
-    
+
+
+    .map-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
     .hero .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
