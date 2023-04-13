@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+
+body {
+  margin: 0;
+}
+
+:root {
+
+  /**
+  * colors
+  */
+  
+  --red: #ff392e;
+  --pastel-brown: #836953;
+  --cream-white: #F8F4F1;
+  --brown: #92301B;
+  
+  /**
+  * typography
+  */
+  
+  --fs-1: 6.55rem;
+  --fs-2: 6.375rem;
+  --fs-3: 2.5rem;
+  --fs-4: 2.375rem;
+  --fs-5: 1.5rem;
+  --fs-6: 1.4rem;
+  --fs-7: 1rem;
+  
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  
+  /**
+  * spacing
+  */
+  
+  --section-padding: 360px;
+  --div-padding: 280px;
+  --title-padding: 100px;
+  
+  /**
+  * transition
+  */
+  
+  --transition-1: 0.25s ease;
+  }
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+/* general */
+ /*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+ul{
+  list-style: none; 
+}
+
+body {
+  font-size: 28px;
+  background-image: url(".././public/assets/images/Artboard\ 1@4x-100.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Dongle', sans-serif;
+  scroll-behavior: smooth;
+  line-height: 25px;
+  color: var(--brown);
+}
