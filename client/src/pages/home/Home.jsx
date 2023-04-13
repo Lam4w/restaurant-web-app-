@@ -211,7 +211,7 @@ export default function Home() {
                     <div className='map-list'>
                       <div><h3>Sushi</h3></div>
                       <div>
-                        {foods.filter((food) => food.type === 'sushi').map((food) => (
+                        {foods?.filter((food) => food.type === 'sushi').map((food) => (
                           <div key={food.type}>
                             {food.name}
                           </div>
@@ -221,7 +221,7 @@ export default function Home() {
                     <div className='map-list'>
                       <div><h3>Sashimi</h3></div>
                       <div>
-                        {foods.filter((food) => food.type === 'sashimi').map((food) => (
+                        {foods?.filter((food) => food.type === 'sashimi').map((food) => (
                           <div key={food.type}>
                             {food.name}
                           </div>
@@ -231,7 +231,7 @@ export default function Home() {
                     <div className='map-list'>
                       <div><h3>Bento</h3></div>
                       <div>
-                        {foods.filter((food) => food.type === 'bento').map((food) => (
+                        {foods?.filter((food) => food.type === 'bento').map((food) => (
                           <div key={food.type}>
                             {food.name}
                           </div>
@@ -241,7 +241,7 @@ export default function Home() {
                     <div className='map-list'>
                       <div><h3>Beverage</h3></div>
                       <div>
-                        {foods.filter((food) => food.type === 'beverage').map((food) => (
+                        {foods?.filter((food) => food.type === 'beverage').map((food) => (
                           <div key={food.type}>
                             {food.name}
                           </div>
@@ -251,7 +251,7 @@ export default function Home() {
                     <div className='map-list'>
                       <div><h3>Ramen</h3></div>
                       <div>
-                        {foods.filter((food) => food.type === 'ramen').map((food) => (
+                        {foods?.filter((food) => food.type === 'ramen').map((food) => (
                           <div key={food.type}>
                             {food.name}
                           </div>
@@ -261,7 +261,7 @@ export default function Home() {
                     <div className='map-list'>
                       <div><h3>Soba</h3></div>
                       <div>
-                        {foods.filter((food) => food.type === 'soba').map((food) => (
+                        {foods?.filter((food) => food.type === 'soba').map((food) => (
                           <div key={food.type}>
                             {food.name}
                           </div>
