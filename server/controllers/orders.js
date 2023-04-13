@@ -9,20 +9,24 @@ const getOrdersColelction = () => {
 export const createOrder = async (req, res) => {
     const {
         userId,
+        name,
         address,
         phone,
         note,
         products,
-        total
+        total,
+        date,
     } = req.body;
     try {
         await getFoodsColelction().insertOne({
             userId: userId,
+            name: name,
             address: address,
             phone: phone,
             note: note,
             products: products,
             total: total,
+            date: date,
             isDelivered: false
         });
         res.status(201).json({ msg: 'Created successfully' });
