@@ -107,7 +107,7 @@ const EditProfileForm = () => {
                     setEmail(e.target.value)
                     handleChange(e)
                   }}/>                   
-                {errors.email && <span classNameName="error">{errors.email}</span>}
+                {errors.email && <span className="error">{errors.email}</span>}
               </div>
               <div className="form-group">
                 <label htmlFor="phone">Phone number:</label>
@@ -116,7 +116,7 @@ const EditProfileForm = () => {
                     setPhone(e.target.value)
                     handleChange(e)
                   }} />
-                {errors.phone && <span classNameName="error">{errors.phone}</span>}
+                {errors.phone && <span className="error">{errors.phone}</span>}
               </div>
               <div className="form-group">
                 <label htmlFor="address">Address:</label>
@@ -125,7 +125,7 @@ const EditProfileForm = () => {
                     setAddress(e.target.value)
                     handleChange(e)
                   }} />
-                {errors.address && <span classNameName="error">{errors.address}</span>}
+                {errors.address && <span className="error">{errors.address}</span>}
               </div>
               <button type="submit" onClick={handleSubmit}>Submit</button>
               <button className='cancel-btn' id='cancel' onClick={handleCancel}>Cancel</button>
