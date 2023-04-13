@@ -204,6 +204,15 @@ button:hover {
   display:flex;
 }
 
+.info .group{
+  border-collapse: collapse;
+  white-space: nowrap; 
+  table-layout: fixed;
+}
+.info .group div{
+  overflow: hidden; 
+    text-overflow: ellipsis;
+}
 
 section h2 {
   display: inline-block;

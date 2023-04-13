@@ -11,7 +11,7 @@ const AccountInfo = () => {
   const [user, setUser] = useState({});
 
   const getUser = async() => {
-    const response = await axios.get(`http://localhost:3001/users/${userId.userId}`,{
+    const response = await axios.get(`http://localhost:3001/users/${userId._id}`,{
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -38,23 +38,23 @@ const AccountInfo = () => {
           <div className="name">
             <div><ion-icon name="person-outline"></ion-icon></div>
             <div className="group">
-              <div>{userId.firstName}</div>
+              <div>{user.firstName}</div>
             </div>
             <div className="group">
-              <div>{userId.lastName}</div>            
+              <div>{user.lastName}</div>            
             </div>
           </div>
           <div className="group">
             <div><ion-icon name="mail-open-outline"></ion-icon></div>
-            <div>{userId.email}</div>            
+            <div>{user.email}</div>            
           </div>     
           <div className="group">
             <div><ion-icon name="call-outline"></ion-icon></div>
-            <div>{userId.phone}</div>            
+            <div>{user.phone}</div>            
           </div>
           <div className="group">
             <div><ion-icon name="location-outline"></ion-icon></div>
-            <div>{userId.address}</div>            
+            <div>{user.address}</div>            
           </div>
         </div>    
       </div>

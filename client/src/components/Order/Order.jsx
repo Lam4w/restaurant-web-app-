@@ -9,12 +9,13 @@ const Order = () => {
   const token = useSelector((state) => state.token);
 
   const getOrderByUserId = async () => {
-    const response = await axios.get(`http://localhost:3001/orders/user/${userId.userId}`, {
+    const response = await axios.get(`http://localhost:3001/orders/user/${userId._id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     
     const orderInfo = await response.data;
     setData(orderInfo);
+    console.log(orderInfo);
   };
 
   useEffect(() => {
@@ -41,10 +42,10 @@ const Order = () => {
         <tbody>
           {orders.map(order => (
             <tr key={order._id}>
-              <td>{order._id}</td>
+              <td className ="order-id">{order._id}</td>
               <td>{order.address}</td>
               <td>{order.date}</td>
-              <td>{order.total}</td>
+              <td>{order.total.toLocaleString()}</td>
               <td>{deliveryStatus(order.isDelivered)}</td>
             </tr>
           ))}

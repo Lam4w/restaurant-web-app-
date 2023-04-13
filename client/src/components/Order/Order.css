@@ -224,6 +224,27 @@ label {
 	margin-bottom: 5px;
 }
 
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap; 
+    table-layout: fixed;
+  }
+  
+  th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+  }
+
+  
+
+  th {
+    background-color: #f7f7f7;
+  }
+
 
 
 
@@ -515,6 +536,7 @@ label {
     text-align: left;
   }
   
+
   th {
     background-color: #f7f7f7;
   }
