@@ -15,7 +15,6 @@ export const createOrder = async (req, res) => {
         note,
         products,
         total,
-        date,
     } = req.body;
     try {
         await getFoodsColelction().insertOne({
@@ -26,7 +25,7 @@ export const createOrder = async (req, res) => {
             note: note,
             products: products,
             total: total,
-            date: date,
+            date: new Date(),
             isDelivered: false
         });
         res.status(201).json({ msg: 'Created successfully' });
