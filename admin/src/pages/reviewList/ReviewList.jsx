@@ -4,9 +4,6 @@ import { DeleteOutline } from "@material-ui/icons";
 import { useState, useEffect } from "react";
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { Link } from "react-router-dom";
-
-
 
 export default function ReviewList() {
   const [data, setData] = useState([]);
@@ -33,12 +30,12 @@ export default function ReviewList() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   
   const columns = [
-    { field: "_id", headerName: "ID", width: 130 },
-    { field: "name", headerName: "Name", width: 200 },
+    { field: "_id", headerName: "ID", width: 180 },
+    { field: "name", headerName: "Name", width: 180 },
     {
       field: "desc",
       headerName: "Review",
-      width: 400,
+      width: 750,
     },
     {
       field: "action",

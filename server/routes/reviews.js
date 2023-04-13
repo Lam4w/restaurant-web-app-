@@ -15,6 +15,6 @@ router.get('/', getRandomReviews);
 router.put('/', verifyToken, updateReview);
 
 //DELETE
-router.delete('/', verifyToken, deleteReview);
+router.delete('/:id', verifyToken, deleteReview);
 
 export default router;

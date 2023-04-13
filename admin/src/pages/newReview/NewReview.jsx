@@ -6,9 +6,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-
-
-
 export default function NewReview() {
 
   const navigate = useNavigate();
@@ -46,11 +43,6 @@ export default function NewReview() {
     });
   };
 
-  const handleUpload = (e) => {
-    e.preventDefault();
-    upload({file: img})
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -65,16 +57,12 @@ export default function NewReview() {
     <div className="newReview">
       <h1 className="newReviewTitle">New Review</h1>
       <form className="newReviewForm">
-        {/* <div className="newReviewItem">
-          <label>Name of Reviewer</label>
-          <input type="text" placeholder="name" />
-        </div> */}
         <div className="newReviewItem">
-          <label>Name of review</label>
+          <label>Reviewer</label>
           <input type="text" placeholder="review" onChange={handleChange}/>
         </div>
         <div className="newReviewItem">
-          <label>Describe</label>
+          <label>Review</label>
           <input type="email" placeholder="describe" onChange={handleChange}/>
         </div>
         

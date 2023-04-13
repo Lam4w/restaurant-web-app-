@@ -16,6 +16,7 @@ export default function Home() {
         
         const result = sushiFoods.flatMap((val, i) => [val, nonSushiFoods[i]]).concat(nonSushiFoods.slice(sushiFoods.length));
         setFoods(result);
+        console.log(result);
     });
   }, [])
 
