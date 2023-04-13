@@ -7,7 +7,7 @@ const getUsersColelction = () => {
 
 //READ
 export const getUser = async (req, res) => {
-    if (req.user.isAdmin || req.user._id === req.params.id) {
+    if (req.user.isAdmin || req.user.id === req.params.id) {
         try {
             const user = await getUsersColelction().findOne(
                 {
