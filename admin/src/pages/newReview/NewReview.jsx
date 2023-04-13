@@ -6,7 +6,12 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-const navigate = useNavigate();
+
+
+
+export default function NewReview() {
+
+  const navigate = useNavigate();
   const [review, setReview] = useState({});
   const [img, setImg] = useState({});
   const [uploaded, setUploaded] = useState(false);
@@ -55,8 +60,7 @@ const navigate = useNavigate();
 
     navigate('/reviews');
   }
-
-export default function NewReview() {
+  
   return (
     <div className="newReview">
       <h1 className="newReviewTitle">New Review</h1>
