@@ -4,7 +4,7 @@ import GridFoodItem from '../../components/gridItem/GridFoodItem';
 import GridReviewItem from '../../components/gridItem/GridReviewItem';
 
 export default function Home() {
-  const [reviews, setReviews] = useState();
+  const [reviews, setReviews] = useState([]);
   const [foods, setFoods] = useState();
 
   useEffect(() => {
@@ -17,59 +17,59 @@ export default function Home() {
         const result = sushiFoods.flatMap((val, i) => [val, nonSushiFoods[i]]).concat(nonSushiFoods.slice(sushiFoods.length));
         setFoods(result);
     });
-  }, [foods])
+  }, [])
 
   useEffect(() => {
-    fetch('https://6437d9c80c58d3b1457b0e31.mockapi.io/Review')
+    fetch('http://localhost:3001/reviews/')
       .then(results => results.json())
       .then(data => {
-        setReviews(data.splice(0, 5));
+        setReviews(data);
     });
-  }, [foods])
+  }, []);
 
   return (
     <div className='home-wrapper'>
       <div>
         <div>
-          <section class="hero section-divider section-padding" id="home">
-            <div class="container">
-              <div class="hero-content">
-                <h1 class="section-title">
+          <section className="hero section-divider section-padding" id="home">
+            <div className="container">
+              <div className="hero-content">
+                <h1 className="section-title">
                   japanese delicacy
                 </h1>
 
-                <p class="hero-subtitle">
+                <p className="hero-subtitle">
                   Join us celebrate different kinds of japan delicacies. Enjoy the most authentic foods that japan have. Combined of rice, seafoods and vagetables. Don't forget their mouth watering desserts. Enjoy your favourite japan foods.
                 </p>
 
-                <div class="hero-btn">
+                <div className="hero-btn">
                   <a href="/menu.html">
-                    <button class="btn">Order here</button>
+                    <button className="btn">Order here</button>
                   </a>
                 </div>
               </div>
 
-              <div class="hero-img">
+              <div className="hero-img">
                 <img src='/assets/images/hero-img-1.svg' alt="" />
 
-                <div class="hero-img-content">
+                <div className="hero-img-content">
 
-                  <div class="hero-content">
-                    <div class="img-wrapper">
+                  <div className="hero-content">
+                    <div className="img-wrapper">
                       <img src='/assets/images/hero-img-2.svg' alt="" />
                     </div>
 
-                    <p class="subtitle">
+                    <p className="subtitle">
                       Lorem ipsum, dolor sit amet fugit totam maiores alias sit amet corporis! Ipsam molestiae odi a corrupti.
                     </p>
                   </div>
 
-                  <div class="hero-content">
-                    <div class="img-wrapper">
+                  <div className="hero-content">
+                    <div className="img-wrapper">
                       <img src='/assets/images/hero-img-3.svg' alt="" />
                     </div>
 
-                    <p class="subtitle">
+                    <p className="subtitle">
                       Lorem ipsum, dolor sit amet fugit totam maiores alias sit amet corporis! Ipsam molestiae odi a corrupti.
                     </p>
                   </div>
@@ -78,20 +78,20 @@ export default function Home() {
             </div>
           </section>
 
-          <section class="about section-divider section-padding" id="about">
-            <div class="div-container">
-              <h1 class="section-title">
+          <section className="about section-divider section-padding" id="about">
+            <div className="div-container">
+              <h1 className="section-title">
                 about us
               </h1>
 
-              <div class="grid-list">
-                <div class="grid-list-img">
-                  <div class="img-wrapper">
+              <div className="grid-list">
+                <div className="grid-list-img">
+                  <div className="img-wrapper">
                     <img src='/assets/images/about-img.svg' alt="abc" />
                   </div>
                 </div>
 
-                <div class="grid-list-content">
+                <div className="grid-list-content">
                   <p>
                     Ban dang tim hieu mot mon qua de tang nguoi than, gan ket noi quan he voi doi tac nhan dip dac biet? Gio trai cay la su lua chon hang dau cua nhung mon qua. MOt gio trai cay dep co the lam qua tang trong nhung dip sinh nhap, chuc mung ngay phu nu 8/3, chuc mung ngay nha giao Viet Nam 20/10, khi truong, cam on, tham hoi....
                   </p>
@@ -104,21 +104,21 @@ export default function Home() {
             </div>
           </section>
 
-          <section class="menu section-divider section-padding" id="menu">
-            <div class="div-container">
-              <h1 class="section-title">
+          <section className="menu section-divider section-padding" id="menu">
+            <div className="div-container">
+              <h1 className="section-title">
                 our menu
               </h1>
 
-              <div class="menu-top div-padding">
-                <h2 class="section-subtitle">
+              <div className="menu-top div-padding">
+                <h2 className="section-subtitle">
                   bento boxes
                 </h2>
 
-                <div class="grid-list">
-                  <div class="grid-content right">
-                    <div class="grid-content-container">
-                      <h3 class="menu-subtitle ">bento box</h3>
+                <div className="grid-list">
+                  <div className="grid-content right">
+                    <div className="grid-content-container">
+                      <h3 className="menu-subtitle ">bento box</h3>
 
                       <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut dolore accusamus deserunt perspiciatis?
@@ -126,13 +126,13 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div class="grid-img right">
+                  <div className="grid-img right">
                     <img src='/assets/images/menu-img-1.svg' alt="" />
                   </div>
 
-                  <div class="grid-content left">
-                    <div class="grid-content-container">
-                      <h3 class="menu-subtitle ">bento box</h3>
+                  <div className="grid-content left">
+                    <div className="grid-content-container">
+                      <h3 className="menu-subtitle ">bento box</h3>
 
                       <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut dolore accusamus deserunt perspiciatis?
@@ -140,44 +140,44 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div class="grid-img left">
+                  <div className="grid-img left">
                     <img src='/assets/images/menu-img-2.svg' alt="" />
                   </div>
                 </div>
               </div>
 
-              <div class="menu-mid div-padding">
-                <h2 class="section-subtitle">
+              <div className="menu-mid div-padding">
+                <h2 className="section-subtitle">
                   selection
                 </h2>
 
-                <div class="grid-list" id="grid-list">
-                  <div class="grid-img">
+                <div className="grid-list" id="grid-list">
+                  <div className="grid-img">
                     <img src='/assets/images/menu-img-3.svg' alt="" />
                   </div>
 
-                  <div class="grid-img">
+                  <div className="grid-img">
                     <img src='/assets/images/menu-img-4.svg' alt="" />
                   </div>
 
-                  <div class="grid-img">
+                  <div className="grid-img">
                     <img src='/assets/images/menu-img-5.svg' alt="" />
                   </div>
 
-                  <div class="grid-item">
-                    <h3 class="menu-subtitle" id="selection-name1">Selection 1</h3>
+                  <div className="grid-item">
+                    <h3 className="menu-subtitle" id="selection-name1">Selection 1</h3>
 
                     <p id="selection-desc1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, placeat? Minus dolorum autem nulla quo praesentium.</p>
                   </div>
 
-                  <div class="grid-item">
-                    <h3 class="menu-subtitle" id="selection-name2">Selection 2</h3>
+                  <div className="grid-item">
+                    <h3 className="menu-subtitle" id="selection-name2">Selection 2</h3>
 
                     <p id="selection-desc2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, placeat? Minus dolorum autem nulla quo praesentium.</p>
                   </div>
 
-                  <div class="grid-item">
-                    <h3 class="menu-subtitle" id="selection-name3">Selection 3</h3>
+                  <div className="grid-item">
+                    <h3 className="menu-subtitle" id="selection-name3">Selection 3</h3>
 
                     <p id="selection-desc3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, placeat? Minus dolorum autem nulla quo praesentium.</p>
                   </div>
@@ -185,13 +185,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div class="menu-bottom div-padding">
-                <div class="grid-list">
-                  <h2 class="section-subtitle">
+              <div className="menu-bottom div-padding">
+                <div className="grid-list">
+                  <h2 className="section-subtitle">
                     side dishes
                   </h2>
 
-                  <h2 class="section-subtitle">
+                  <h2 className="section-subtitle">
                     drinks
                   </h2>
                   {
@@ -202,67 +202,66 @@ export default function Home() {
                 </div>
               </div>
 
-              <img src='/assets/images/menu-img-6.svg' alt="" class="menu-img-left"/>
+              <img src='/assets/images/menu-img-6.svg' alt="" className="menu-img-left"/>
 
-              <img src='/assets/images/menu-img-7.svg' alt="" class="menu-img-right"/>
+              <img src='/assets/images/menu-img-7.svg' alt="" className="menu-img-right"/>
               
             </div>
           </section>
 
-              <section class="promo section-divider section-padding" id="promo">
-                <div class="div-container">
-                  <div class="grid-list">
-                    <div>
-                      <h1 class="section-title">
-                        authentic
-                      </h1>
-                      <h1 class="section-title">
-                        authentic
-                      </h1>
-                      <h1 class="section-title">
-                        authentic
-                      </h1>
-                      <h1 class="section-title">
-                        authentic
-                      </h1>
-                    </div>
-
-                    <div>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium quod, voluptates, eos, quasi illum iusto voluptatibus cupiditate aliquam rem provident modi delectus soluta laborum! Vitae dolore id dignissimos tempora similique!
-                    </div>
-
-                    <div>
-                      <img src='/assets/images/promo-img-1.svg' alt="" />
-                    </div>
-
-                    <div>
-                      <img src='/assets/images/promo-img-2.svg' alt="" />
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="review section-divider section-padding" id="review">
-                <div class="div-container">
-                  <h1 class="section-title">
-                    what they say
+          <section className="promo section-divider section-padding" id="promo">
+            <div className="div-container">
+              <div className="grid-list">
+                <div>
+                  <h1 className="section-title">
+                    authentic
                   </h1>
-
-                  <div class="grid-list">
-                    {
-                      reviews?.map((value, index) => {
-                        <GridReviewItem review = {value} key = {index}/>
-                      })
-                    }
-
-                  </div>
+                  <h1 className="section-title">
+                    authentic
+                  </h1>
+                  <h1 className="section-title">
+                    authentic
+                  </h1>
+                  <h1 className="section-title">
+                    authentic
+                  </h1>
                 </div>
-              </section>
-            </div>
 
-            <div class="back-to-top">
-              <a href="#top"><ion-icon name="arrow-up-outline"></ion-icon></a>
+                <div>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium quod, voluptates, eos, quasi illum iusto voluptatibus cupiditate aliquam rem provident modi delectus soluta laborum! Vitae dolore id dignissimos tempora similique!
+                </div>
+
+                <div>
+                  <img src='/assets/images/promo-img-1.svg' alt="" />
+                </div>
+
+                <div>
+                  <img src='/assets/images/promo-img-2.svg' alt="" />
+                </div>
+              </div>
             </div>
+          </section>
+
+          <section className="review section-divider section-padding" id="review">
+            <div className="div-container">
+              <h1 className="section-title">
+                what they say
+              </h1>
+
+              <div className="grid-list">
+                {
+                  reviews?.map((value, index) => {
+                    <GridReviewItem review={value} key={index}/>
+                  })
+                }
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div className="back-to-top">
+          <a href="#top"><ion-icon name="arrow-up-outline"></ion-icon></a>
+        </div>
       </div>
     </div>
   )

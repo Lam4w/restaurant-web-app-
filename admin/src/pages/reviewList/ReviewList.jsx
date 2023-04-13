@@ -10,7 +10,9 @@ export default function ReviewList() {
   const token = useSelector((state) => state.token);
 
   const getReviews = async () => {
-    const response = await axios.get('http://localhost:3001/reviews');
+    const response = await axios.get('http://localhost:3001/reviews/all', {
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
     const resData = response.data;
     setData(resData);

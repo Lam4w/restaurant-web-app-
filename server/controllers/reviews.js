@@ -30,24 +30,31 @@ export const createReview = async (req, res) => {
 
 //READ 
 export const getAllReviews = async (req, res) => {
-    // if (req.user.isAdmin) {
+    if (req.user.isAdmin) {
         try {
             const reviews = await getReviewsColelction().find().toArray();
             res.status(200).json(reviews);
         } catch (err) {
             res.status(500).json(err);
         }
-    // } else {
-    //     res.status(403).json('Access Denied')
-    // } 
+    } else {
+        res.status(403).json('Access Denied')
+    } 
 };
 
 //READ RANDOM REVIEWS
 export const getRandomReviews = async (req, res) => {
     try {
-        const reviews = await getRandomReviews().aggregate([
+        let reviews = [];
+        const pipeline = [
             { $sample: { size: 5 }},
-        ])
+        ];
+        const data = await getReviewsColelction().aggregate(pipeline);
+        
+        for await (const doc of data) {
+            reviews.push(doc);
+        }
+
         res.status(200).json(reviews);
     } catch (err) {
         res.status(500).json(err);

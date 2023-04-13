@@ -8,7 +8,7 @@ const router = express.Router();
 router.post('/', verifyToken, createReview);
 
 //READ
-router.get('/all', getAllReviews);
+router.get('/all', verifyToken, getAllReviews);
 router.get('/', getRandomReviews);
 
 //UPDATE
