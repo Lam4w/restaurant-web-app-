@@ -1,20 +1,25 @@
 import { CREATE_ORDER, CLEAR_CART, CLEAR_ORDER, FETCH_ORDERS } from "../types";
+import axios from "axios";
 
 export const createOrder = (order) => async (dispatch) => {
   try {
-    const res = await fetch("http://localhost:3001/orders/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(order)
-    });
+    // const res = await fetch("http://localhost:3001/orders/", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(order)
+    // });
+
+    const res = await axios.post('http://localhost:3001/orders', order)
 
     if (!res.ok) {
       throw new Error("Error creating order");
     }
 
-    const data = await res.json();
+    // const data = await res.json();
+    const data = await res.data;
+
     dispatch({ type: CREATE_ORDER, payload: data });
     console.log(data);
   } catch (err) {

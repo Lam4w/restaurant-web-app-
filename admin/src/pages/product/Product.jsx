@@ -17,7 +17,6 @@ export default function Product() {
   const foodId = useParams();
   const navigate = useNavigate();
   const [food, setFood] = useState({});
-  // const [updateFood, setUpdateFood] = useState({});
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
   const [type, setType] = useState('');
@@ -28,20 +27,6 @@ export default function Product() {
   const handleSelectChange = (e) => {
     setStatus(e.target.value);
   };
-
-  // const handleChange = (e) => {
-  //   const value = e.target.value;
-  //   setUpdateFood({...updateFood, [e.target.name]: value});
-  //   console.log(updateFood);
-  // };
-
-  // const handleSelectChange = (e) => {
-  //   const value = e.target.value;
-  //   let availableValue
-  //   if (value === 'true') availableValue = true;
-  //   availableValue = false;
-  //   setUpdateFood({...updateFood, "isAvailable": availableValue});
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,13 +58,6 @@ export default function Product() {
     setDesc(data.desc);
     setPrice(data.price);
     setType(data.type);
-    // setUpdateFood({ 
-    //   "name": data.name,
-    //   "desc": data.desc, 
-    //   "price": data.price, 
-    //   "type": data.type,
-    //   "isAvailable": data.isAvailable,
-    // });
   };
 
   useEffect(() => {

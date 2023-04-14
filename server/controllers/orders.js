@@ -7,18 +7,18 @@ const getOrdersColelction = () => {
 
 //CREATE 
 export const createOrder = async (req, res) => {
-    const {
-        userId,
-        name,
-        address,
-        phone,
-        note,
-        products,
-        total,
-    } = req.body;
     try {
-        await getFoodsColelction().insertOne({
-            userId: userId,
+        const {
+            user_id,
+            name,
+            address,
+            phone,
+            note,
+            products,
+            total,
+        } = req.body;
+        await getOrdersColelction().insertOne({
+            user_id: user_id,
             name: name,
             address: address,
             phone: phone,
@@ -26,7 +26,7 @@ export const createOrder = async (req, res) => {
             products: products,
             total: total,
             date: new Date(),
-            isDelivered: false
+            isDelivered: false,
         });
         res.status(201).json({ msg: 'Created successfully' });
     } catch (err) {

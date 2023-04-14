@@ -30,8 +30,8 @@ class Cart extends Component {
     const {user} = this.props;
     console.log('submitting form');
     // onSubmitProps.resetForm();
-        const order = {
-      userId: user._id,
+    const order = {
+      user_id: user._id,
       name: values.name,
       phone: values.phone,
       address: values.address,
