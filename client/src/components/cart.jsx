@@ -36,10 +36,10 @@ class Cart extends Component {
       note: values.note,
       products: this.productDetails,
       total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
-      // isDelivered: false,
     };
     console.log(this.user_id);
     console.log("Submitting order:", order);
+    alert("Need to save order for " + order.name)
     this.props.createOrder(order);
   };
  
@@ -65,9 +65,6 @@ class Cart extends Component {
     note: Yup.string(),
   });
   render() {
-    // const userData = JSON.parse(localStorage.getItem('user'));
-    // const userId = userData._id;
-    const { user } = this.props;
     const { cartItems, order } = this.props;
     return (
       <div className="cart-container">
@@ -79,51 +76,6 @@ class Cart extends Component {
           </div>
          
         )}
-        {/* {
-          order && <Modal isOpen={true} onRequestClose={this.closeModal}>
-          <Zoom>
-            <button className="close-modal" onClick={this.closeModal}>
-              x
-            </button>
-            <div className="order-details">
-              <h3 className="success-message">Your order has been placed.</h3>
-              <h2>Order {order._id}</h2>
-              <ul>
-                <li>
-                  <div>Name:</div>
-                  <div>{order.name}</div>
-                </li>
-                <li>
-                  <div>Phone:</div>
-                  <div>{order.phone}</div>
-                </li>
-                <li>
-                  <div>Address:</div>
-                  <div>{order.address}</div>
-                </li>
-                <li>
-                  <div>Date:</div>
-                  <div>{order.createdAt}</div>
-                </li>
-                <li>
-                  <div>Total:</div>
-                  <div>{(order.total)+" đ"}</div>
-                </li>
-                <li>
-                  <div>Cart Items:</div>
-                  <div>
-                    {order.cartItems.map((x) => (
-                      <div>
-                        {x.count} {" x "} {x.name}
-                      </div>
-                    ))}
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </Zoom>
-        </Modal>
-        } */}
         <div>
           <div className="cart">
             <ul className="cart-items">
