@@ -8,7 +8,6 @@ import Register from './pages/register/Register';
 import Profile from './pages/profile/Profile';
 import Menu from './pages/menu/menu';
 import Homepage from './pages/home/Home';
-import state from './state';
 
 function App() {
   const isAuth = Boolean(useSelector((state) => state.token));
@@ -18,7 +17,7 @@ function App() {
       <div className="App">
         <Header/>
           <Routes>
-            <Route exact path="/" element={ isAuth ? <Homepage /> : <Navigate to='/login'/> } />
+            <Route exact path="/" element={ <Homepage /> } />
             <Route path="/login" element={ isAuth ? <Navigate to='/' /> : <Login /> } />
             <Route path="/register" element={ isAuth ? <Navigate to='/' /> : <Register /> } />
             <Route path="/user" element={ isAuth ? <Profile /> : <Navigate to='/login'/> } />

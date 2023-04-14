@@ -12,9 +12,7 @@ class Menu extends React.Component {
       user: props.user
     };
   }
-    // createOrder = (order) => {
-    //     alert("Need to save order for " + order.name);
-    //   };
+    
     render(){
       const user = this.state.user;
         return (

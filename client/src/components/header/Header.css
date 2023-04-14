@@ -57,8 +57,8 @@
     position: absolute;
     background-color: #F23E4D;
     width: 100px;
-    bottom: 25px;
-    right: 10px;
+    bottom: -2px;
+    right: 3px;
     color: #fff;
     border-radius: 5px;
     transform: translateY(-200%);
@@ -67,6 +67,7 @@
 .nav-item{
     display: flex;
     justify-content: center;
+    padding-block: 5px;
 }
 .nav-item:hover {
     cursor: pointer;

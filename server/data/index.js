@@ -525,7 +525,7 @@ export const orders = [
         user_id: "6437c7d07ed909fa0024f4d0",
         name: "nguyenTungLam",
         address: "207 Neu Street",
-        phone: 0948703828,
+        phone: 948703828,
         date: new Date("2022-10-5"),
         note: "More soy sauce",
         total: 500000,
