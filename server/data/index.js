@@ -326,7 +326,7 @@ export const orders = [
         name: "Henry",
         address: "123 Wsdf Street",
         phone: 1234567890,
-        date: new Date("2022-11-11"),
+        date: new Date("2022-10-11"),
         note: "More soy sauce",
         total: 234400,
         isDelivered: true,
@@ -386,6 +386,273 @@ export const orders = [
                 quantity: 5,
                 total: 40000,
             }
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "6435114d29ef4951b07bf6f8",
+        name: "Tony",
+        address: "12 Main HighWay",
+        phone: 6666666666,
+        date: new Date("2022-10-11"),
+        note: "More chopsticks",
+        total: 500000,
+        isDelivered: false,
+        products: [
+            {
+                product_id: "6436e3ef52605a2ae34415f3",
+                price: 60000,
+                quantity: 1,
+                total: 30000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f2",
+                price: 1000,
+                quantity: 3,
+                total: 60000,
+            },
+          
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "6436ccdb7b85d1d1972522e5",
+        name: "Hades",
+        address: "1 Universe Street",
+        phone: 1234567892,
+        date: new Date("2022-10-9"),
+        note: "More soy sauce",
+        total: 500000,
+        isDelivered: false,
+        products: [
+            {
+                product_id: "6436e3ef52605a2ae34415f5",
+                price: 60000,
+                quantity: 1,
+                total: 30000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f2",
+                price: 1000,
+                quantity: 3,
+                total: 60000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f3",
+                price: 20000,
+                quantity: 2,
+                total: 50000,
+            },
+          
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "6436cd0e7b85d1d1972522e6",
+        name: "leBaoVan",
+        address: "207 Neu Street",
+        phone: 1234567890,
+        date: new Date("2022-10-7"),
+        note: "More and more soy sauce",
+        total: 500000,
+        isDelivered: false,
+        products: [
+            {
+                product_id: "6436e3ef52605a2ae34415f1",
+                price: 12000,
+                quantity: 1,
+                total: 30000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f7",
+                price: 100000,
+                quantity: 3,
+                total: 60000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f3",
+                price: 20000,
+                quantity: 2,
+                total: 50000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f9",
+                price: 190000,
+                quantity: 1,
+                total: 40000,
+            }
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "6436cd3c7b85d1d1972522e7",
+        name: "ngoKhonTan",
+        address: "207 Free Street",
+        phone: 1234567890,
+        date: new Date("2022-10-6"),
+        note: "more ketchup",
+        total: 500000,
+        isDelivered: false,
+        products: [
+           
+            {
+                product_id: "6436e3ef52605a2ae34415fa",
+                price: 110000,
+                quantity: 3,
+                total: 60000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f3",
+                price: 20000,
+                quantity: 2,
+                total: 50000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415fc",
+                price: 110000,
+                quantity: 1,
+                total: 40000,
+            }
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "6437c7d07ed909fa0024f4d0",
+        name: "nguyenTungLam",
+        address: "207 Neu Street",
+        phone: 0948703828,
+        date: new Date("2022-10-5"),
+        note: "More soy sauce",
+        total: 500000,
+        isDelivered: false,
+        products: [
+            {
+                product_id: "6436e3ef52605a2ae34415fe",
+                price: 110000,
+                quantity: 1,
+                total: 30000,
+            },
+          
+         
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "6437d6fdef3b1b1cfe89cbf0",
+        name: "Jisoo",
+        address: "192 Seoul Street",
+        phone: 1234567890,
+        date: new Date("2022-10-04"),
+        note: "More wasabi",
+        total: 500000,
+        isDelivered: false,
+        products: [
+            {
+                product_id: "6436e3ef52605a2ae3441600",
+                price: 20000,
+                quantity: 1,
+                total: 30000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f2",
+                price: 1000,
+                quantity: 3,
+                total: 60000,
+            },
+           
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "643881d012799987627e709a",
+        name: "tranVanKien",
+        address: "156 Pathway Street",
+        phone: 1234567890,
+        date: new Date("2022-10-03"),
+        note: "No soy sauce",
+        total: 500000,
+        isDelivered: false,
+        products: [
+            {
+                product_id: "6436e3ef52605a2ae34415f1",
+                price: 12000,
+                quantity: 1,
+                total: 30000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae3441601",
+                price: 23000,
+                quantity: 3,
+                total: 60000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae34415f3",
+                price: 20000,
+                quantity: 2,
+                total: 50000,
+            },
+            {
+                product_id: "6436e3ef52605a2ae3441603",
+                price: 16000,
+                quantity: 1,
+                total: 40000,
+            }
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "6438d9d8eac598848baaf9cb",
+        name: "leMaiLinh",
+        address: "153 Small Street",
+        phone: 1234567890,
+        date: new Date("2022-10-02"),
+        note: "More sweet sauce",
+        total: 500000,
+        isDelivered: false,
+        products: [
+           
+            {
+                product_id: "6436e3ef52605a2ae3441604",
+                price: 16000,
+                quantity: 1,
+                total: 40000,
+            }
+        ]
+    },
+
+    {
+        _id: new ObjectId(),
+        user_id: "6438820e12799987627e709b",
+        name: "Renjun",
+        address: "123 branch Street",
+        phone: 1234567890,
+        date: new Date("2022-10-01"),
+        note: "More cheess sauce",
+        total: 500000,
+        isDelivered: false,
+        products: [
+            {
+                product_id: "6436e3ef52605a2ae3441603",
+                price: 16000,
+                quantity: 1,
+                total: 30000,
+            },
+          
+            {
+                product_id: "6436e3ef52605a2ae34415f3",
+                price: 20000,
+                quantity: 2,
+                total: 50000,
+            },
+            
         ]
     },
 ];
