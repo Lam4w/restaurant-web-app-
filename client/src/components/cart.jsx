@@ -18,15 +18,13 @@ class Cart extends Component {
   }
   productDetails = this.props.cartItems.map((item) => {
     return {
-      name: item.name,
+      product_id: item._id,
       price: item.price,
-      desc: item.desc,
-      picturePath:item.picturePath,
-      type: item.type,
-      isAvailable: item.isAvailable
+      quantity: item.count,
+      total: item.count * item.price,
     };
   });
-  handleFormSubmit = async (values, onSubmitProps) => {
+  handleFormSubmit = async (values) => {
     const {user} = this.props;
     console.log('submitting form');
     // onSubmitProps.resetForm();
@@ -38,6 +36,7 @@ class Cart extends Component {
       note: values.note,
       products: this.productDetails,
       total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
+      // isDelivered: false,
     };
     console.log(this.user_id);
     console.log("Submitting order:", order);
