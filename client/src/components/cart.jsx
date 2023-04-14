@@ -13,33 +13,19 @@ class Cart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // phone: "",
-      // address: "",
-      // note:"",
-      // name:"",
       showCheckout: false,
     };
   }
- 
-  // handleFormSubmit = (values,e) => {
-  //   console.log("Submitting form with values:", values);
-  //   const order = {
-  //     user_id: "",
-  //     name: values.name,
-  //     phone: values.phone,
-  //     address: values.address,
-  //     note: values.note,
-  //     products: this.props.cartItems,
-  //     total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
-  //   };
-  //   console.log("đây là values"+values);
-  //   console.log("Submitting order:", order);
-  //   // e.preventDefault()
-  //   this.props.createOrder(order);
-  // };
-    // user  = this.props;
-
-  
+  productDetails = this.props.cartItems.map((item) => {
+    return {
+      name: item.name,
+      price: item.price,
+      desc: item.desc,
+      picturePath:item.picturePath,
+      type: item.type,
+      isAvailable: item.isAvailable
+    };
+  });
   handleFormSubmit = async (values, onSubmitProps) => {
     const {user} = this.props;
     console.log('submitting form');
@@ -50,7 +36,7 @@ class Cart extends Component {
       phone: values.phone,
       address: values.address,
       note: values.note,
-      products: this.props.cartItems,
+      products: this.productDetails,
       total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
     };
     console.log(this.user_id);
