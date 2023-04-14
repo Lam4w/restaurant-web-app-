@@ -202,14 +202,14 @@ export default function Home() {
               <div className="menu-bottom div-padding">
                 <div className="grid-list">
                   <h2 className="section-subtitle">
-                    side dishes
+                    MAIN MENU
                   </h2>
 
                   <h2 className="section-subtitle">
-                    drinks
+                    MAIN MENU
                   </h2>
                     <div className='map-list'>
-                      <div><h3>Sushi</h3></div>
+                      <div><h3 className="menu-subtitle">Sushi</h3></div>
                       <div>
                         {foods?.filter((food) => food.type === 'sushi').map((food) => (
                           <div key={food.type}>
@@ -219,7 +219,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className='map-list'>
-                      <div><h3>Sashimi</h3></div>
+                      <div><h3 className="menu-subtitle">Sashimi</h3></div>
                       <div>
                         {foods?.filter((food) => food.type === 'sashimi').map((food) => (
                           <div key={food.type}>
@@ -229,7 +229,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className='map-list'>
-                      <div><h3>Bento</h3></div>
+                      <div><h3 className="menu-subtitle">Bento</h3></div>
                       <div>
                         {foods?.filter((food) => food.type === 'bento').map((food) => (
                           <div key={food.type}>
@@ -239,7 +239,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className='map-list'>
-                      <div><h3>Beverage</h3></div>
+                      <div><h3 className="menu-subtitle">Beverage</h3></div>
                       <div>
                         {foods?.filter((food) => food.type === 'beverage').map((food) => (
                           <div key={food.type}>
@@ -249,7 +249,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className='map-list'>
-                      <div><h3>Ramen</h3></div>
+                      <div><h3 className="menu-subtitle">Ramen</h3></div>
                       <div>
                         {foods?.filter((food) => food.type === 'ramen').map((food) => (
                           <div key={food.type}>
@@ -259,7 +259,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className='map-list'>
-                      <div><h3>Soba</h3></div>
+                      <div><h3 className="menu-subtitle">Soba</h3></div>
                       <div>
                         {foods?.filter((food) => food.type === 'soba').map((food) => (
                           <div key={food.type}>

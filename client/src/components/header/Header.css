@@ -88,7 +88,6 @@
     font-size: 20px;
     overflow: hidden;
     height: 25px;
-    padding-top: 2px;
     display: flex;
     justify-content: flex-start;
 }

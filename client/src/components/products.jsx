@@ -39,6 +39,7 @@ class Fetch extends Component {
           ) : (
           <ul className="products">
             {this.props.products.map((product) => (
+              product?.isAvailable && 
               <li key={product._id}>
                 <div className="product">
                   <figure className="card-banner img-holder">
@@ -54,7 +55,7 @@ class Fetch extends Component {
                     <h3>{product.name}</h3>
                   </a>
                   <div className="product-price">
-                    <h4>{product.price + ' đ'}</h4>
+                    <h4>{product.price.toLocaleString() + ' đ'}</h4>
                     <button onClick={() => this.props.addToCart(product)} className="btn primary">
                       Add To Cart
                     </button>
@@ -82,7 +83,7 @@ class Fetch extends Component {
                     Type: {product.type}
                   </p>
                   <div className="product-price">
-                    <div>Price: {product.price + ' đ'}</div>
+                    <div>Price: {product.price.toLocaleString() + ' đ'}</div>
                     <button
                       className="btn primary"
                       onClick={() => {
