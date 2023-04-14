@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import { removeFromCart } from "../actions/cartActions";
 import { increItem, decreItem } from "../actions/cartActions";
 import { createOrder, clearOrder } from "../actions/orderActions";
-import Modal from 'react-modal';
-import { Zoom } from 'react-reveal';
-// import { mapStateToProps } from "../actions/orderActions";
 
 class Cart extends Component {
   constructor(props) {
@@ -27,7 +24,6 @@ class Cart extends Component {
   handleFormSubmit = async (values) => {
     const {user} = this.props;
     console.log('submitting form');
-    // onSubmitProps.resetForm();
     const order = {
       user_id: user._id,
       name: values.name,
@@ -65,7 +61,7 @@ class Cart extends Component {
     note: Yup.string(),
   });
   render() {
-    const { cartItems, order } = this.props;
+    const { cartItems } = this.props;
     return (
       <div className="cart-container">
         {cartItems.length === 0 ? (
